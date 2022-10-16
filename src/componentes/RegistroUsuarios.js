@@ -48,7 +48,6 @@ const RegistroUsurios = () => {
         };
     };
 
-    //Para enviar los datos
     const handleSubmit = async (e) => {
         e.preventDefault();
         cambiarEstadoAlerta(false);
@@ -82,7 +81,7 @@ const RegistroUsurios = () => {
             return;
         };
 
-        //mandamos los datos al auth de firebase
+        //Mandamos los datos al auth de firebase
         try {
             await auth.createUserWithEmailAndPassword(correo, password);
             history.push('/');

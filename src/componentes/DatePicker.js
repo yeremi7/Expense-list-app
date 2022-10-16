@@ -9,7 +9,7 @@ import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { es } from 'date-fns/locale';
 
-//esto viene de date-fns
+//Esto viene de date-fns
 function parseDate(str, format) {
   const parsed = dateFnsParse(str, format, new Date(), { locale: es });
   if (DateUtils.isDate(parsed)) {
@@ -22,7 +22,7 @@ function formatDate(date, format, locale) {
   return dateFnsFormat(date, format, { locale: es });
 };
 
-//Estos son los meses y dias-semanas que quieron que aparezca, osea porque estan en ingles y quiero que esten en español
+//Estos son los meses y dias-semanas que quiero que aparezca, osea porque estan en ingles y quiero que esten en español
 const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',];
 const dias_semana_cortos = ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
 

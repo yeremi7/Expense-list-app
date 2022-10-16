@@ -30,23 +30,16 @@ import borrarGasto from '../firebase/borrarGasto';
 const ListasDeGastos = () => {
 
     const [gastos, obtenerMasGastos, hayMasPorCargar] = useObtenerGastos();
-    /* console.log(gastos); */
 
     //Aqui transformamos la fecha, por asi decirlo en un lenguaje humano 
     const formatearFecha = (fecha) => {
 		return format(fromUnixTime(fecha), "dd 'de' MMMM 'de' yyyy", {locale: es})
 	}
 
-    //Este codigo es importante porque casi no lo entendi, asi si queremos esto nada mas hay que colocar el codigo...esta parte esta conectada con la parte2, que esta abajo
 	const fechaEsIgual = (gastos, index, gasto) => {
 		if(index !== 0){
 			const fechaActual = formatearFecha(gasto.fecha);
             const fechaGastoAnterior = formatearFecha(gastos[index -1].fecha);
-
-            /* console.log(index);
-            console.log('1 fecha',fechaActual,fechaGastoAnterior,);
-            console.log('2 fecha',fechaActual);
-            console.log('3 fecha',fechaGastoAnterior); */
 
             if(fechaActual === fechaGastoAnterior){
 				return true;
@@ -74,9 +67,8 @@ const ListasDeGastos = () => {
                         
                         <div key={gasto.id} >
                         
-                        {/* Este es la parte2 de arriba. Aqui preguntamos sino es igual ejecutame la fecha */}
+                        {/*Aqui preguntamos sino es igual ejecutame la fecha */}
                         {!fechaEsIgual(gastos, index, gasto) && <Fecha>{formatearFecha(gasto.fecha)}</Fecha>}
-                        {/* FIN */}
 
                         <ElementoLista key={gasto.id} >
 

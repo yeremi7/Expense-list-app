@@ -43,10 +43,8 @@ const InicioSesion = () => {
         cambiarEstadoAlerta(false);
         cambiarAlerta({});
 
-
         const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
 
-        //El signo de exclamacion es para false, osea sino es verdadera o sino cumple con la formula de la expresionRegular has esta logica
         if (!expresionRegular.test(correo)) {
             cambiarEstadoAlerta(true);
             cambiarAlerta({
@@ -64,10 +62,9 @@ const InicioSesion = () => {
             return;
         };
 
-        //mandamos los datos al auth de firebase
+        //Mandamos los datos al auth de firebase
         try {
             await auth.signInWithEmailAndPassword(correo, password);
-            /* console.log('Has ingresado a la cuenta con exito'); */
             history.push('/');
 
         } catch (error) {

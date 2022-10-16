@@ -25,8 +25,6 @@ const FomularioGasto = ({gasto}) => {
 	const {usuario} = useAuth();
 	const history = useHistory();
 
-	//Paso 1
-	//handleChange para los input
 	const handleChange = (e) => {
 		if(e.target.name === 'descripcion'){
 			cambiarInputDescripcion(e.target.value);
@@ -35,7 +33,6 @@ const FomularioGasto = ({gasto}) => {
 		};
 	};
 
-	//Paso 3
 	// Esto es para la logica de editarGasto para que se muestre los valores en formulario de editarGasto
 	useEffect(() => {
 
@@ -59,13 +56,12 @@ const FomularioGasto = ({gasto}) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		// el parseFloat no me tranforma la cantidad en tipo number sino que todavia esta tipo string, al parecer el parceFloat es para que funcione el toFixed
 		let cantidad = parseFloat(inputCantidad).toFixed(2);
 
 		if (inputDescripcion !== '' && inputCantidad !== '' ) {
 			if (cantidad) {
 
-				//Continuacion del paso 3: aqui perguntamos si existe el gasto, si existe editalo es decir has esta funcion. sino existe el gasto ejecuata el agregarGasto es decir ejecuta esta funcion
+				//Aqui preguntamos si existe el gasto, si existe editalo. sino existe el gasto ejecuta el agregarGasto
 				if (gasto) {
 					editarGasto({
 						id: gasto.id,
@@ -103,7 +99,7 @@ const FomularioGasto = ({gasto}) => {
 						cambiarAlerta({tipo: 'error', mensaje: 'Hubo un problema al intentar agregar tu gasto.'});
 					})
 				}
-				//Fin
+	
 			} else {
 				cambiarEstadoAlerta(true);
 				cambiarAlerta({tipo: 'error', mensaje: 'El valor que ingresaste no es correcto.'});
