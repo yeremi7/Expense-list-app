@@ -18,4 +18,5 @@ Aqui aplico todos los conocimientos de una manera mas profunda aprendidos del cu
 
 7) Utilizacion de la libreria react-helmet.
 
-8) Por ultimo la aplicacion solida de los conocimientos adquiridos mediante cursos para la logica de JavaScript.
+8) Por ultimo la aplicacion solida de los conocimientos adquiridos mediante cursos para la logica de JavaScript. [Link](https://expense-list-app-7878.netlify.app/)
+
